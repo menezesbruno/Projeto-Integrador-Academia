@@ -1,18 +1,13 @@
-html {
-  font-size: 14px;
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
