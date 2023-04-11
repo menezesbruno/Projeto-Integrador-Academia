@@ -17,14 +17,13 @@ namespace Academia.Services
             _logger = logger;
         }
 
-        public SendGridOptions Options { get; } //Set with Secret Manager.
+        public SendGridOptions Options { get; }
 
         public async Task SendEmailAsync(string toEmail, string subject, string message)
         {
             if (string.IsNullOrEmpty(Options.ApiKey))
-            {
-                throw new Exception("SendGridKey nulo");
-            }
+                throw new Exception("SendGrid.ApiKey nulo ou vazio!");
+
             await Execute(Options.ApiKey, subject, message, toEmail);
         }
 
@@ -39,14 +38,13 @@ namespace Academia.Services
                 HtmlContent = message
             };
             msg.AddTo(new EmailAddress(toEmail));
-
-            // Disable click tracking.
-            // See https://sendgrid.com/docs/User_Guide/Settings/tracking.html
             msg.SetClickTracking(false, false);
+
             var response = await client.SendEmailAsync(msg);
+
             _logger.LogInformation(response.IsSuccessStatusCode
-                                   ? $"Email to {toEmail} queued successfully!"
-                                   : $"Failure Email to {toEmail}");
+                                   ? $"Email para {toEmail} colocado na fila de envio com sucesso!"
+                                   : $"Falha ao enviar email para {toEmail}");
         }
     }
 }
