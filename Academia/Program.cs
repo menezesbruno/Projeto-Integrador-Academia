@@ -1,5 +1,8 @@
 using Academia.Data;
+using Academia.Options;
+using Academia.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +16,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<SendGridOptions>(builder.Configuration.GetSection(SendGridOptions.SendGrid));
 
 var app = builder.Build();
 

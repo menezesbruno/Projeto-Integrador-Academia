@@ -4,6 +4,10 @@
     ViewData["Title"] = "Localização";
 }
 
-<h1>@ViewData["Title"]</h1>
+<partial name="_Breadcrumbs" />
 
-<p>Inserir componente da API que vai renderizar o GoogleMaps com o endereço da Academia.</p>
+<div class="container py-5">
+    <div class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.7911576881395!2d-47.50536476444407!3d-23.490578966027417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5755a84de0d%3A0x8dd8a1b5c9246d84!2sAcademia%20Pump%20Fit!5e0!3m2!1spt-BR!2sbr!4v1681091558564!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
