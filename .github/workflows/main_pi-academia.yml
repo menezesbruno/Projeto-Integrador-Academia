@@ -33,7 +33,7 @@ jobs:
         with:
             files: '${{env.DOTNET_ROOT}}\myapp\appsettings.json'
         env:
-            SendGrid.ApiKey: ${{ secrets.SendGrid_ApiKey }}
+            SendGrid.ApiKey: ${{ secrets.SENDGRID_APIKEY }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
