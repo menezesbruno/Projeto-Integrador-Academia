@@ -1,7 +1,18 @@
 (function ($) {
     "use strict";
 
-    // Dropdown on mouse hover
+    // Marcar o menu ativo
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href').toLowerCase() === location.pathname.toLowerCase()) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+
+    // Dropdown ao passar o mouse
     $(document).ready(function () {
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
@@ -18,7 +29,7 @@
         $(window).resize(toggleNavbarMethod);
     });
 
-    // Back to top button
+    // Voltar ao topo
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.back-to-top').fadeIn('slow');
@@ -31,4 +42,3 @@
         return false;
     });
 })(jQuery);
-
