@@ -43,14 +43,16 @@ namespace Academia.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [Display(Name = "Email")]
             [EmailAddress]
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Senha")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Lembrar?")]
             public bool RememberMe { get; set; }
         }
 
