@@ -7,69 +7,57 @@
 
 <partial name="_Breadcrumbs" />
 
-<h4>Cliente</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Cliente.Nome" class="control-label"></label>
-                <input asp-for="Cliente.Nome" class="form-control" />
-                <span asp-validation-for="Cliente.Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.Sobrenome" class="control-label"></label>
-                <input asp-for="Cliente.Sobrenome" class="form-control" />
-                <span asp-validation-for="Cliente.Sobrenome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.Email" class="control-label"></label>
-                <input asp-for="Cliente.Email" class="form-control" />
-                <span asp-validation-for="Cliente.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.Telefone" class="control-label"></label>
-                <input asp-for="Cliente.Telefone" class="form-control" />
-                <span asp-validation-for="Cliente.Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.PersonalId" class="control-label"></label>
-                <select asp-for="Cliente.PersonalId" class="form-control" asp-items="ViewBag.PersonalId"></select>
-                <span asp-validation-for="Cliente.PersonalId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.FormaPagamentoId" class="control-label"></label>
-                <select asp-for="Cliente.FormaPagamentoId" class="form-control" asp-items="ViewBag.FormaPagamentoId"></select>
-                <span asp-validation-for="Cliente.FormaPagamentoId" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Cliente.Id" />
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Cliente.Ativo" /> @Html.DisplayNameFor(model => model.Cliente.Ativo)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.DataAdicionado" class="control-label"></label>
-                <input asp-for="Cliente.DataAdicionado" class="form-control" />
-                <span asp-validation-for="Cliente.DataAdicionado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cliente.DataModificado" class="control-label"></label>
-                <input asp-for="Cliente.DataModificado" class="form-control" />
-                <span asp-validation-for="Cliente.DataModificado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container py-5">
+    <h4>Cliente</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Cliente.Nome" class="control-label"></label>
+                    <input asp-for="Cliente.Nome" class="form-control" />
+                    <span asp-validation-for="Cliente.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cliente.Sobrenome" class="control-label"></label>
+                    <input asp-for="Cliente.Sobrenome" class="form-control" />
+                    <span asp-validation-for="Cliente.Sobrenome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cliente.Email" class="control-label"></label>
+                    <input asp-for="Cliente.Email" class="form-control" />
+                    <span asp-validation-for="Cliente.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cliente.Telefone" class="control-label"></label>
+                    <input asp-for="Cliente.Telefone" class="form-control" />
+                    <span asp-validation-for="Cliente.Telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cliente.Personal.Nome" class="control-label"></label>
+                    <select asp-for="Cliente.PersonalId" class="form-control" asp-items="ViewBag.PersonalId"></select>
+                    <span asp-validation-for="Cliente.PersonalId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cliente.FormaPagamento.Nome" class="control-label"></label>
+                    <select asp-for="Cliente.FormaPagamentoId" class="form-control" asp-items="ViewBag.FormaPagamentoId"></select>
+                    <span asp-validation-for="Cliente.FormaPagamentoId" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Cliente.Id" />
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="./Index">Voltar para a lista</a>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Voltar para a lista</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

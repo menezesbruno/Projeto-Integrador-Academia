@@ -7,7 +7,7 @@
 
 <partial name="_Breadcrumbs" />
 
-<div>
+<div class="container py-5">
     <h4>Cliente</h4>
     <hr />
     <dl class="row">
@@ -45,29 +45,11 @@
             @Html.DisplayNameFor(model => model.Cliente.Personal)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Personal.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Ativo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Ativo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.DataAdicionado)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.DataAdicionado)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.DataModificado)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.DataModificado)
+            @Html.DisplayFor(model => model.Cliente.Personal.Nome)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Cliente.Id">Edit</a> |
-    <a asp-page="./Index">Voltar para a lista</a>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Cliente.Id">Editar</a> |
+        <a asp-page="./Index">Voltar para a lista</a>
+    </div>
 </div>
