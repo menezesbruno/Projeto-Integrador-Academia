@@ -1,0 +1,34 @@
+﻿@page
+@model Academia.Pages.FormasPagamento.CreateModel
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<h4>FormaPagamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FormaPagamento.Nome" class="control-label"></label>
+                <input asp-for="FormaPagamento.Nome" class="form-control" />
+                <span asp-validation-for="FormaPagamento.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
