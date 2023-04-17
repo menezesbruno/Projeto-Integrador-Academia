@@ -7,43 +7,46 @@
 
 <partial name="_Breadcrumbs" />
 
-<h4>Personal</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Personal.Nome" class="control-label"></label>
-                <input asp-for="Personal.Nome" class="form-control" />
-                <span asp-validation-for="Personal.Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Personal.Sobrenome" class="control-label"></label>
-                <input asp-for="Personal.Sobrenome" class="form-control" />
-                <span asp-validation-for="Personal.Sobrenome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Personal.Email" class="control-label"></label>
-                <input asp-for="Personal.Email" class="form-control" />
-                <span asp-validation-for="Personal.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Personal.Telefone" class="control-label"></label>
-                <input asp-for="Personal.Telefone" class="form-control" />
-                <span asp-validation-for="Personal.Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container py-5">
+    <h4>Personal Trainer</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Personal.Nome" class="control-label"></label>
+                    <input asp-for="Personal.Nome" class="form-control" />
+                    <span asp-validation-for="Personal.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Personal.Sobrenome" class="control-label"></label>
+                    <input asp-for="Personal.Sobrenome" class="form-control" />
+                    <span asp-validation-for="Personal.Sobrenome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Personal.Email" class="control-label"></label>
+                    <input asp-for="Personal.Email" class="form-control" />
+                    <span asp-validation-for="Personal.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Personal.Telefone" class="control-label"></label>
+                    <input asp-for="Personal.Telefone" class="form-control" />
+                    <span asp-validation-for="Personal.Telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Criar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Voltar para a lista</a>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Voltar para a lista</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -39,7 +39,7 @@ namespace Academia.Pages.Clientes
                 return NotFound();
             }
            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "Id", "Nome");
-           ViewData["PersonalId"] = new SelectList(_context.Personal, "Id", "Email");
+           ViewData["PersonalId"] = new SelectList(_context.Personal, "Id", "Nome");
             return Page();
         }
 
