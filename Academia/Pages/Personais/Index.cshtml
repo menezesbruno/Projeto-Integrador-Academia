@@ -1,0 +1,59 @@
+﻿@page
+@model Academia.Pages.Personais.IndexModel
+
+@{
+    ViewData["Title"] = "Personais";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container-fluid py-5">
+    <p>
+        <a asp-page="Create">Adicionar</a>
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-lg m-0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personal[0].Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personal[0].Sobrenome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personal[0].Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personal[0].Telefone)
+                    </th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Personal)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sobrenome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefone)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

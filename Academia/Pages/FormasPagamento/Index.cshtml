@@ -1,0 +1,41 @@
+﻿@page
+@model Academia.Pages.FormasPagamento.IndexModel
+
+@{
+    ViewData["Title"] = "Formas de Pagamento";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container-fluid py-5">
+    <p>
+        <a asp-page="Create">Adicionar</a>
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-lg m-0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FormaPagamento[0].Nome)
+                    </th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.FormaPagamento)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

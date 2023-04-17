@@ -1,0 +1,50 @@
+﻿@page
+@model Academia.Pages.FormasPagamento.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<h4>FormaPagamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FormaPagamento.Nome" class="control-label"></label>
+                <input asp-for="FormaPagamento.Nome" class="form-control" />
+                <span asp-validation-for="FormaPagamento.Nome" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="FormaPagamento.Id" />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FormaPagamento.Ativo" /> @Html.DisplayNameFor(model => model.FormaPagamento.Ativo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormaPagamento.DataAdicionado" class="control-label"></label>
+                <input asp-for="FormaPagamento.DataAdicionado" class="form-control" />
+                <span asp-validation-for="FormaPagamento.DataAdicionado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormaPagamento.DataModificado" class="control-label"></label>
+                <input asp-for="FormaPagamento.DataModificado" class="form-control" />
+                <span asp-validation-for="FormaPagamento.DataModificado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

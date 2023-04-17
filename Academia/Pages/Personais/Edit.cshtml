@@ -1,0 +1,65 @@
+﻿@page
+@model Academia.Pages.Personais.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<h4>Personal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Personal.Nome" class="control-label"></label>
+                <input asp-for="Personal.Nome" class="form-control" />
+                <span asp-validation-for="Personal.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personal.Sobrenome" class="control-label"></label>
+                <input asp-for="Personal.Sobrenome" class="form-control" />
+                <span asp-validation-for="Personal.Sobrenome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personal.Email" class="control-label"></label>
+                <input asp-for="Personal.Email" class="form-control" />
+                <span asp-validation-for="Personal.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personal.Telefone" class="control-label"></label>
+                <input asp-for="Personal.Telefone" class="form-control" />
+                <span asp-validation-for="Personal.Telefone" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Personal.Id" />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Personal.Ativo" /> @Html.DisplayNameFor(model => model.Personal.Ativo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personal.DataAdicionado" class="control-label"></label>
+                <input asp-for="Personal.DataAdicionado" class="form-control" />
+                <span asp-validation-for="Personal.DataAdicionado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personal.DataModificado" class="control-label"></label>
+                <input asp-for="Personal.DataModificado" class="form-control" />
+                <span asp-validation-for="Personal.DataModificado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
