@@ -9787,7 +9787,7 @@ a.text-dark:focus, a.text-dark:hover {
         height: 100%;
         top: 0;
         right: 0;
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/carousel-2.jpg);
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/bg-avaliacao.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -9827,7 +9827,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 .footer, .page-header, .subscribe {
     background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../img/bg.jpg);
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover
 }
