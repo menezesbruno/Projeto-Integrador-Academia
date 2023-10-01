@@ -12,13 +12,15 @@
         <a asp-page="Create">Adicionar</a>
     </p>
     <div class="table-responsive">
-        <table class="table table-bordered table-responsive-lg m-0">
+        <table class="table table-bordered bg-white table-responsive-lg m-0">
             <thead>
                 <tr>
-                    <th>
+                    <th class="text-red">
                         @Html.DisplayNameFor(model => model.FormaPagamento[0].Nome)
                     </th>
-                    <th>Opções</th>
+                    <th class="text-red">
+                        Opções
+                    </th>
                 </tr>
             </thead>
             <tbody>

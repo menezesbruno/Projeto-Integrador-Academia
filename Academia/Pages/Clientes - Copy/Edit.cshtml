@@ -1,8 +1,8 @@
 ﻿@page
-@model Academia.Pages.Clientes.CreateModel
+@model Academia.Pages.Clientes.EditModel
 
 @{
-    ViewData["Title"] = "Adicionar";
+    ViewData["Title"] = "Editar";
 }
 
 <partial name="_Breadcrumbs" />
@@ -14,13 +14,11 @@
         <div class="col-md-4">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <!-- O CAMPO MATRICULA NÃO PODE SER EDITADO POIS ELE É GERADO AUTOMATICAMENTE-->
                 <div class="form-group">
-                    <label asp-for="Cliente.Matricula" class="control-label"></label>
-                    <input asp-for="Cliente.Matricula" class="form-control" readonly />
-                    <span asp-validation-for="Cliente.Matricula" class="text-danger"></span>
+                    <label asp-for="Cliente.Identificacao" class="control-label"></label>
+                    <input asp-for="Cliente.Identificacao" class="form-control" />
+                    <span asp-validation-for="Cliente.Identificacao" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
                     <label asp-for="Cliente.Nome" class="control-label"></label>
                     <input asp-for="Cliente.Nome" class="form-control" />
@@ -42,21 +40,24 @@
                     <span asp-validation-for="Cliente.Telefone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Cliente.Personal.Nome" class="control-label"></label>
+                    <label asp-for="Cliente.Personal.Nome" class="control-label">Personal Trainner</label>
                     <select asp-for="Cliente.PersonalId" class="form-control" asp-items="ViewBag.PersonalId"></select>
+                    <span asp-validation-for="Cliente.PersonalId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Cliente.FormaPagamento.Nome" class="control-label"></label>
+                    <label asp-for="Cliente.FormaPagamento.Nome" class="control-label">Forma de Pagamento</label>
                     <select asp-for="Cliente.FormaPagamentoId" class="form-control" asp-items="ViewBag.FormaPagamentoId"></select>
+                    <span asp-validation-for="Cliente.FormaPagamentoId" class="text-danger"></span>
                 </div>
+                <input type="hidden" asp-for="Cliente.Id" />
                 <div class="form-group">
-                    <input type="submit" value="Criar" class="btn btn-primary" />
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
     <div>
-        <a asp-page="Index">Voltar para a lista</a>
+        <a asp-page="./Index">Voltar para a lista</a>
     </div>
 </div>
 

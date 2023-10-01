@@ -43,12 +43,12 @@ namespace Academia.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "Email")]
+            [Display(Name = "Email:")]
             [EmailAddress]
             public string Email { get; set; }
 
             [Required]
-            [Display(Name = "Senha")]
+            [Display(Name = "Senha:")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -75,7 +75,7 @@ namespace Academia.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string? returnUrl = null)
         {
-            returnUrl ??= Url.Content("~/");
+            returnUrl ??= Url.Content("~/Clientes/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         

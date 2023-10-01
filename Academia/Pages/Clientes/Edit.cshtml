@@ -15,6 +15,11 @@
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
+                    <label asp-for="Cliente.Matricula" class="control-label"></label>
+                    <input asp-for="Cliente.Matricula" class="form-control" />
+                    <span asp-validation-for="Cliente.Matricula" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="Cliente.Nome" class="control-label"></label>
                     <input asp-for="Cliente.Nome" class="form-control" />
                     <span asp-validation-for="Cliente.Nome" class="text-danger"></span>
@@ -35,12 +40,12 @@
                     <span asp-validation-for="Cliente.Telefone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Cliente.Personal.Nome" class="control-label"></label>
+                    <label asp-for="Cliente.Personal.Nome" class="control-label">Personal Trainner</label>
                     <select asp-for="Cliente.PersonalId" class="form-control" asp-items="ViewBag.PersonalId"></select>
                     <span asp-validation-for="Cliente.PersonalId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Cliente.FormaPagamento.Nome" class="control-label"></label>
+                    <label asp-for="Cliente.FormaPagamento.Nome" class="control-label">Forma de Pagamento</label>
                     <select asp-for="Cliente.FormaPagamentoId" class="form-control" asp-items="ViewBag.FormaPagamentoId"></select>
                     <span asp-validation-for="Cliente.FormaPagamentoId" class="text-danger"></span>
                 </div>

@@ -11,54 +11,32 @@
     <p>
         <a asp-page="Create">Adicionar</a>
     </p>
-
-    <!-- Sistema de busca-->
-    <form method="get">
-        <div class="form-group">
-            <label for="searchCriteria" class="text-white">Escolha o critério:</label>
-            <select class="form-control" name="searchCriteria">
-                <option value="nome">Nome</option>
-                <option value="sobrenome">Sobrenome</option>
-                <option value="matricula">Matrícula</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="searchCriteria" class="text-white">Digite a informação a ser buscada:</label>
-            <input type="text" class="form-control" name="searchTerm" placeholder="Digite sua pesquisa">
-        </div>
-        <button type="submit" class="btn btn-primary">Buscar</button>
-        <a asp-page="Index" class="btn btn-secondary">Limpar</a>
-    </form>
-    <!-- Fimd o Sistema de busca-->
-
-    <br />
-
     <div class="table-responsive">
-        <table class="table table-bordered bg-white table-responsive-lg m-0">
+        <table class="table table-bordered table-responsive-lg m-0">
             <thead>
-                <tr class="table-bordered">
-                    <th class="text-red">
-                        @Html.DisplayNameFor(model => model.Cliente[0].Matricula)
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cliente[0].Identificacao)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].Nome)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].Sobrenome)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].Email)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].Telefone)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].FormaPagamento)
                     </th>
-                    <th class="text-red">
+                    <th>
                         @Html.DisplayNameFor(model => model.Cliente[0].Personal)
                     </th>
-                    <th class="text-red">
+                    <th>
                         Opções
                     </th>
                 </tr>
@@ -68,7 +46,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Matricula)
+                            @Html.DisplayFor(modelItem => item.Identificacao)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Nome)
@@ -97,7 +75,5 @@
                 }
             </tbody>
         </table>
-
     </div>
 </div>
-

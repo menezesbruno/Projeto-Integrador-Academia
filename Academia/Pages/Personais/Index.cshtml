@@ -12,22 +12,23 @@
         <a asp-page="Create">Adicionar</a>
     </p>
     <div class="table-responsive">
-        <table class="table table-bordered table-responsive-lg m-0">
+        <table class="table table-bordered bg-white table-responsive-lg m-0">
             <thead>
                 <tr>
-                    <th>
+                    <th class="text-red">
                         @Html.DisplayNameFor(model => model.Personal[0].Nome)
                     </th>
-                    <th>
+                    <th class="text-red">
                         @Html.DisplayNameFor(model => model.Personal[0].Sobrenome)
                     </th>
-                    <th>
+                    <th class="text-red">
                         @Html.DisplayNameFor(model => model.Personal[0].Email)
                     </th>
-                    <th>
+                    <th class="text-red">
                         @Html.DisplayNameFor(model => model.Personal[0].Telefone)
+                    <th class="text-red">
+                    Opções
                     </th>
-                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody>

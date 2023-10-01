@@ -18,28 +18,6 @@ namespace Academia.Pages.Clientes
         {
         ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "Id", "Nome");
         ViewData["PersonalId"] = new SelectList(_context.Personal, "Id", "Nome");
-
-            // BUSCA PELA ULTIMA MATRICULA CADASTRADA NO BANCO DE DADOS
-            var ultimoCliente = _context.Cliente.OrderByDescending(c => c.Matricula).FirstOrDefault();
-
-            if (ultimoCliente != null)
-            {
-                
-                if (int.TryParse(ultimoCliente.Matricula, out int ultimoNumeroMatricula))
-                {
-                    ultimoNumeroMatricula++; 
-                    Cliente = new Cliente { Matricula = ultimoNumeroMatricula.ToString() };
-                }
-                else
-                {
-                    Cliente = new Cliente { Matricula = "1" };
-                }
-            }
-            else
-            {
-                Cliente = new Cliente { Matricula = "1" };
-            }
-
             return Page();
         }
 
