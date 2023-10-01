@@ -6,6 +6,11 @@ namespace Academia.Models
     public class Cliente : BaseEntity
     {
         [Required]
+        [StringLength(10)]
+        [DisplayName("Matrícula")]
+        public string Matricula { get; set; }
+
+        [Required]
         [StringLength(25)]
         [DisplayName("Nome")]
         public string Nome { get; set; }

@@ -15,18 +15,20 @@
                     <hr />
                     <div asp-validation-summary="ModelOnly" class="help-block text-danger"></div>
                     <div class="form-floating">
-                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                         <label asp-for="Input.Email" class="form-label"></label>
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                         <span asp-validation-for="Input.Email" class="help-block text-danger"></span>
                     </div>
+                    <br />
                     <div class="form-floating">
-                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
                         <label asp-for="Input.Password" class="form-label"></label>
+                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />                      
                         <span asp-validation-for="Input.Password" class="help-block text-danger"></span>
                     </div>
+                    <br />
                     <div>
                         <div class="checkbox">
-                            <label asp-for="Input.RememberMe" class="form-label">
+                            <label asp-for="Input.RememberMe" class="form-checkbox">
                                 <input class="form-check-input" asp-for="Input.RememberMe" />
                                 @Html.DisplayNameFor(m => m.Input.RememberMe)
                             </label>
@@ -35,6 +37,7 @@
                     <div>
                         <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
                     </div>
+                    <br />
                     <div>
                         <p>
                             <a id="forgot-password" asp-page="./ForgotPassword">Esqueceu a sua senha?</a>

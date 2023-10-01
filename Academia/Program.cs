@@ -1,9 +1,12 @@
 using Academia.Data;
 using Academia.Options;
 using Academia.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,5 +46,15 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+// Configurar a página de login como página inicial
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGet("/", context =>
+    {
+        context.Response.Redirect("/Identity/Account/Login");
+        return Task.CompletedTask;
+    });
+});
 
 app.Run();

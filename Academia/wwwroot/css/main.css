@@ -60,7 +60,7 @@ body {
     line-height: 1.5;
     color: #666;
     text-align: left;
-    background-color: #fff
+    background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -75,6 +75,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
+    color: yellow;
     margin-bottom: .5rem
 }
 
@@ -334,8 +335,8 @@ template {
     margin-bottom: .5rem;
     font-family: Oswald,sans-serif;
     font-weight: 500;
+    color: yellow;
     line-height: 1.2;
-    color: #343a40
 }
 
 .h1, h1 {
@@ -1674,7 +1675,7 @@ pre {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #666
+    color: black;
 }
 
     .table td, .table th {
@@ -1697,11 +1698,12 @@ pre {
 }
 
 .table-bordered {
-    border: 1px solid #dee2e6
+    border: 2px solid black;
+
 }
 
     .table-bordered td, .table-bordered th {
-        border: 1px solid #dee2e6
+        border: 3px solid black;
     }
 
     .table-bordered thead td, .table-bordered thead th {
@@ -1969,8 +1971,8 @@ pre {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0;
+    border: 3px solid #ced4da;
+    border-radius: 5;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
 
@@ -2020,6 +2022,15 @@ select.form-control:focus::-ms-value {
 .form-control-file, .form-control-range {
     display: block;
     width: 100%
+}
+
+.form-label{
+    color:white;
+}
+
+.form-checkbox {
+    margin-left: 20px;
+    color:white;
 }
 
 .col-form-label {
@@ -2122,7 +2133,7 @@ textarea.form-control {
     }
 
 .form-check-label {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .form-check-inline {
@@ -4036,7 +4047,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
-    align-items: center
+    align-items: initial
 }
 
 .navbar-toggler {
@@ -7669,7 +7680,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 
 .p-4 {
-    padding: 1.5rem !important
+    padding: 1.5rem !important;
+    font-size: 20px;
 }
 
 .pt-4, .py-4 {
@@ -9418,6 +9430,14 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     color: #fff !important
 }
 
+.text-red{
+    color: red;
+}
+
+.text-yellow{
+    color: yellow;
+}
+
 .text-primary {
     color: #e31c25 !important
 }
@@ -9596,7 +9616,7 @@ a.text-dark:focus, a.text-dark:hover {
         }
 
     .table-bordered td, .table-bordered th {
-        border: 1px solid #dee2e6 !important
+        border: 2px solid black !important
     }
 
     .table-dark {
@@ -9663,9 +9683,9 @@ a.text-dark:focus, a.text-dark:hover {
 .navbar-dark .navbar-nav .nav-link {
     padding-left: 15px;
     padding-right: 15px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
-    color: #fff
+    color: #fff;
 }
 
     .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
