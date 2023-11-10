@@ -1,0 +1,102 @@
+﻿@page
+@model Academia.Pages.Treinos.DeleteModel
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container py-5">
+    <h3>Você tem certeza que quer remover isto?</h3>
+    <div>
+        <h4>TREINOS</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Matricula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Matricula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Sobrenome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Sobrenome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Segunda)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Segunda)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Terca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Terca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Quarta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Quarta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Quinta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Quinta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Sexta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Sexta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Sabado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Sabado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Domingo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Domingo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Altura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Altura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.Peso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.Peso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treino.IMC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treino.IMC)
+        </dd>
+    </dl>
+    
+        <form method="post">
+            <input type="hidden" asp-for="Treino.Id" />
+            <input type="submit" value="Apagar" class="btn btn-danger" /> |
+            <a asp-page="./Index">Voltar para Lista</a>
+        </form>
+    </div>
+</div>

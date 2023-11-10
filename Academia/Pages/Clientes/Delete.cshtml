@@ -10,12 +10,15 @@
 <div class="container py-5">
     <h3>Você tem certeza que quer remover isto?</h3>
     <div>
-        <h4>Cliente</h4>
+        <h4>CLIENTE</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Cliente.Matricula)
             </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cliente.Matricula)
+            </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Cliente.Nome)
             </dt>

@@ -1,0 +1,137 @@
+﻿@page
+@model Academia.Pages.Treinos.IndexModel
+
+@{
+    ViewData["Title"] = "Treinos";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container-fluid py-5">
+
+<p>
+    <a asp-page="Create">Adicionar Treino</a>
+</p>
+
+    <!-- Sistema de busca-->
+    <form method="get">
+        <div class="form-group">
+            <label for="searchCriteria" class="text-white">Escolha o critério:</label>
+            <select class="form-control" name="searchCriteria">
+                <option value="nome">Nome</option>
+                <option value="sobrenome">Sobrenome</option>
+                <option value="matricula">Matrícula</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="searchCriteria" class="text-white">Digite a informação a ser buscada:</label>
+            <input type="text" class="form-control" name="searchTerm" placeholder="Digite sua pesquisa">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+        <a asp-page="Index" class="btn btn-secondary">Limpar</a>
+    </form>
+    <!-- Fimd o Sistema de busca-->
+
+ <br />
+
+<div class="table-responsive">
+    <table class="table table-bordered bg-white table-responsive-lg m-0">
+        <thead>
+            <tr class="table-bordered">
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Matricula)
+                </th>
+                    <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Nome)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Sobrenome)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Segunda)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Terca)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Quarta)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Quinta)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Sexta)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Sabado)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Domingo)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Altura)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].Peso)
+                </th>
+                <th class="text-red">
+                    @Html.DisplayNameFor(model => model.Treino[0].IMC)
+                </th>
+                 <th class="text-red">
+                    Opções
+                 </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Treino) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Segunda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Terca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quarta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quinta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Domingo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Altura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IMC)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>

@@ -1,0 +1,96 @@
+﻿@page
+@model Academia.Pages.Treinos.EditModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container py-5">
+    <h4>TREINOS</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Treino.Matricula" class="control-label"></label>
+                <input asp-for="Treino.Matricula" class="form-control" />
+                <span asp-validation-for="Treino.Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Nome" class="control-label"></label>
+                <input asp-for="Treino.Nome" class="form-control" />
+                <span asp-validation-for="Treino.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Sobrenome" class="control-label"></label>
+                <input asp-for="Treino.Sobrenome" class="form-control" />
+                <span asp-validation-for="Treino.Sobrenome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Segunda" class="control-label"></label>
+                <input asp-for="Treino.Segunda" class="form-control" />
+                <span asp-validation-for="Treino.Segunda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Terca" class="control-label"></label>
+                <input asp-for="Treino.Terca" class="form-control" />
+                <span asp-validation-for="Treino.Terca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Quarta" class="control-label"></label>
+                <input asp-for="Treino.Quarta" class="form-control" />
+                <span asp-validation-for="Treino.Quarta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Quinta" class="control-label"></label>
+                <input asp-for="Treino.Quinta" class="form-control" />
+                <span asp-validation-for="Treino.Quinta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Sexta" class="control-label"></label>
+                <input asp-for="Treino.Sexta" class="form-control" />
+                <span asp-validation-for="Treino.Sexta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Sabado" class="control-label"></label>
+                <input asp-for="Treino.Sabado" class="form-control" />
+                <span asp-validation-for="Treino.Sabado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Domingo" class="control-label"></label>
+                <input asp-for="Treino.Domingo" class="form-control" />
+                <span asp-validation-for="Treino.Domingo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Altura" class="control-label"></label>
+                <input asp-for="Treino.Altura" class="form-control" />
+                <span asp-validation-for="Treino.Altura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Peso" class="control-label"></label>
+                <input asp-for="Treino.Peso" class="form-control" />
+                <span asp-validation-for="Treino.Peso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.IMC" class="control-label"></label>
+                <input asp-for="Treino.IMC" class="form-control" />
+                <span asp-validation-for="Treino.IMC" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Treino.Id" />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+        <a asp-page="./Index">Voltar para a lista</a>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
