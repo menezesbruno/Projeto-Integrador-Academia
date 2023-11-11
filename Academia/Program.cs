@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Academia.Pages.Treinos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +56,11 @@ app.UseEndpoints(endpoints =>
         context.Response.Redirect("/Identity/Account/Login");
         return Task.CompletedTask;
     });
+
+    endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 });
 
 app.Run();

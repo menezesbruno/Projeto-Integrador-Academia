@@ -1,0 +1,170 @@
+﻿@page
+@model Academia.Pages.Treinos.CreateModel
+
+@{
+    ViewData["Title"] = "Criar Treino";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container py-5">
+    <h4>TREINOS</h4>
+    <hr />
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label asp-for="Treino.Matricula" class="control-label"></label>
+                        <div class="input-group">
+                            <input asp-for="Treino.Matricula" class="form-control" />
+                            <div class="input-group-append">
+                                <button id="btnBuscar" class="btn btn-primary" type="button">Buscar</button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Treino.Matricula" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Treino.Nome" class="control-label"></label>
+                        <input asp-for="Treino.Nome" class="form-control" />
+                        <span asp-validation-for="Treino.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Treino.Sobrenome" class="control-label"></label>
+                        <input asp-for="Treino.Sobrenome" class="form-control" />
+                        <span asp-validation-for="Treino.Sobrenome" class="text-danger"></span>
+                    </div>
+                </div>
+
+            <div class="form-group">
+                <label asp-for="Treino.Segunda" class="control-label"></label>
+                <input asp-for="Treino.Segunda" class="form-control" />
+                <span asp-validation-for="Treino.Segunda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Terca" class="control-label"></label>
+                <input asp-for="Treino.Terca" class="form-control" />
+                <span asp-validation-for="Treino.Terca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Quarta" class="control-label"></label>
+                <input asp-for="Treino.Quarta" class="form-control" />
+                <span asp-validation-for="Treino.Quarta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Quinta" class="control-label"></label>
+                <input asp-for="Treino.Quinta" class="form-control" />
+                <span asp-validation-for="Treino.Quinta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Sexta" class="control-label"></label>
+                <input asp-for="Treino.Sexta" class="form-control" />
+                <span asp-validation-for="Treino.Sexta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Sabado" class="control-label"></label>
+                <input asp-for="Treino.Sabado" class="form-control" />
+                <span asp-validation-for="Treino.Sabado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treino.Domingo" class="control-label"></label>
+                <input asp-for="Treino.Domingo" class="form-control" />
+                <span asp-validation-for="Treino.Domingo" class="text-danger"></span>
+            </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="Treino.Altura" class="control-label"></label>
+                            <input asp-for="Treino.Altura" class="form-control small-input" />
+                            <span asp-validation-for="Treino.Altura" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Treino.Peso" class="control-label"></label>
+                            <input asp-for="Treino.Peso" class="form-control small-input" />
+                            <span asp-validation-for="Treino.Peso" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Treino.IMC" class="control-label"></label>
+                            <input asp-for="Treino.IMC" class="form-control small-input" step="0.01"/>
+                            <span asp-validation-for="Treino.IMC" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="imc-status" class="form-group imc-status-yellow"></div>
+
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Voltar para Lista</a>
+</div>
+
+</div>
+
+@section Scripts {
+
+    <script>
+        document.getElementById("btnBuscar").addEventListener("click", function () {
+            var matricula = document.getElementById("Treino_Matricula").value;
+
+            $.get("/Treinos/BuscarMatricula", { matricula: matricula }, function (data) {
+                console.log(data);
+                if (data && data.nome && data.sobrenome) {
+                    document.getElementById("Treino_Nome").value = data.nome;
+                    document.getElementById("Treino_Sobrenome").value = data.sobrenome;
+                } else {
+                    document.getElementById("Treino_Nome").value = "";
+                    document.getElementById("Treino_Sobrenome").value = "";
+                    alert(data.mensagem);
+                }
+            });
+        });
+
+     </script>
+
+    <script>
+        // Função para calcular o IMC e a categoria
+        function calcularIMC() {
+            var altura = parseFloat(document.getElementById("Treino_Altura").value.replace(",", "."));
+            var peso = parseFloat(document.getElementById("Treino_Peso").value.replace(",", "."));
+            var imc = peso / (altura * altura);       
+            var imcFormatted = imc.toFixed(2);
+
+            // Categorias de IMC
+            var categoria = "";
+            if (imc < 18.5) {
+                categoria = "Abaixo do peso";
+            } else if (imc >= 18.5 && imc < 25) {
+                categoria = "Peso normal (ideal)";
+            } else if (imc >= 25 && imc < 30) {
+                categoria = "Sobrepeso";
+            } else if (imc >= 30 && imc < 35) {
+                categoria = "Obesidade Grau I";
+            } else if (imc >= 35 && imc < 40) {
+                categoria = "Obesidade Grau II";
+            } else {
+                categoria = "Obesidade Grau III (Mórbida)";
+            }
+
+            // Exibir a mensagem do IMC e a categoria
+            var mensagem = "Seu IMC é: " + imc.toFixed(2) + " - " + categoria;
+            document.getElementById("imc-status").innerHTML = mensagem;
+            document.getElementById("Treino_IMC").value = imcFormatted;
+        }
+
+        // Adicionar um evento para calcular o IMC quando os campos "Peso" e "Altura" mudarem
+        document.getElementById("Treino_Altura").addEventListener("input", calcularIMC);
+        document.getElementById("Treino_Peso").addEventListener("input", calcularIMC);
+    </script>
+
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

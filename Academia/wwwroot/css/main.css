@@ -108,12 +108,15 @@ dl, ol, ul {
     }
 
 dt {
-    font-weight: 700
+    font-weight: 700;
+    font-weight: bold;
+    color: white;
 }
 
 dd {
     margin-bottom: .5rem;
-    margin-left: 0
+    margin-left: 0;
+    color: white;
 }
 
 blockquote {
@@ -9850,4 +9853,13 @@ a.text-dark:focus, a.text-dark:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
+}
+
+.small-input {
+    width: 150px;
+ }
+
+.imc-status-yellow {
+    color: yellow;
+    font-weight: bold;
 }
