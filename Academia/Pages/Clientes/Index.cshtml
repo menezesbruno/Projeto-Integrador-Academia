@@ -64,7 +64,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Cliente)
+                @foreach (var item in Model.Cliente.OrderBy(c => c.Matricula))
                 {
                     <tr>
                         <td>

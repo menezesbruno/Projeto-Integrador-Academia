@@ -83,7 +83,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Treino) {
+@foreach (var item in Model.Treino.OrderBy(t => t.Matricula)) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Matricula)
